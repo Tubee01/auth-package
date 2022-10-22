@@ -1,6 +1,6 @@
 {
   "name": "nestjs-package-express-session-auth",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Auth package for express session based authentication",
   "repository": "https://github.com/Tubee01/auth-package.git",
   "author": "Bence Tamási <[email protected]>",
