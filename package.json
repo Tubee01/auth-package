@@ -1,5 +1,5 @@
 {
-  "name": "nestjs-session-auth-package",
+  "name": "nestjs-package-express-session-auth",
   "version": "1.0.0",
   "description": "Auth package for express session based authentication",
   "repository": "https://github.com/Tubee01/auth-package.git",
