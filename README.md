@@ -22,8 +22,38 @@
 ```bash
 npm install
 ```
+### Usage
+  
+  ```ts
+  @Module({
+    imports: [
+      ExpressSessionAuthModule.forRootAsync({
+        imports: [UserModule],
+        useFactory: (authService: UserService): IAuthLoginBaseOptions => {
+          const pgSession = connectPgSimple(session);
+          return {
+            authService,
+            session: {
+              name: 'sid',
+              secret: 'secret',
+              rolling: true,
+              cookie: {
+                maxAge: 60 * 1000,
+                secure: process?.env?.NODE_ENV === 'production',
+                httpOnly: process?.env?.NODE_ENV === 'production',
+              },
+              store: new pgSession({
+                conString: 'postgresql://user:password@localhost:5432/db?schema=public',
+              }),
+            },
+          };
+        },
+        inject: [UserService],
+      }),
+    ]
+  })
+  ```
 
 ## Change Log
 
 See [Changelog](CHANGELOG.md) for more information.
-
