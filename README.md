@@ -54,10 +54,6 @@ npm install
     ]
   })
   ```
-  ```ts
-  // auth.controller.ts
-  export class AuthController extends LocalAuthController { }
-  ```
 
 ## Change Log
 
