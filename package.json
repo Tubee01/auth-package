@@ -2,6 +2,7 @@
   "name": "nestjs-session-auth-package",
   "version": "1.0.0",
   "description": "Auth package for express session based authentication",
+  "repository": "https://github.com/Tubee01/auth-package.git",
   "author": "Bence Tamási <[email protected]>",
   "license": "MIT",
   "readmeFilename": "README.md",
@@ -10,6 +11,9 @@
     "dist/**/*",
     "*.md"
   ],
+  "publishConfig": {
+    "@tubee01:registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "start:dev": "tsc -w",
     "build": "tsc",
@@ -36,7 +40,6 @@
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
     "express-session": "^1.17.3"
-
   },
   "devDependencies": {
     "@nestjs/common": "^9.1.5",
