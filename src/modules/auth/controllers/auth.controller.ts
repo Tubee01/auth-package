@@ -13,8 +13,8 @@ import { AUTH_OPTIONS } from '../../../common/constants';
 import { LocalGuard } from '../guards/local.guard';
 @ApiTags('Authorization')
 @Controller('auth')
-export class AuthController {
-  private readonly logger = new Logger(AuthController.name);
+export class LocalAuthController {
+  private readonly logger = new Logger('AuthController');
   constructor(@Inject(AUTH_OPTIONS) private readonly options) {}
   @Post('login')
   @ApiBody({

@@ -11,14 +11,14 @@ import {
 } from '../../common/constants';
 import { IAuthForRootAsyncOptions } from '../interfaces/auth.interface';
 import { LocalSessionSerializer } from './local.session.serializer';
-import { AuthController } from './controllers/auth.controller';
+import { LocalAuthController } from './controllers/auth.controller';
 import LocalStrategy from './strategies/local.session.strategy';
 import crypto from 'crypto';
 import session from 'express-session';
 import passport from 'passport';
 
 @Module({
-  controllers: [AuthController],
+  controllers: [LocalAuthController],
   providers: [LocalStrategy, LocalSessionSerializer],
 })
 export class ExpressSessionAuthModule implements NestModule {
