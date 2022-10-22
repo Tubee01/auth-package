@@ -25,6 +25,7 @@ npm install
 ### Usage
   
   ```ts
+  // auth.module.ts
   @Module({
     imports: [
       ExpressSessionAuthModule.forRootAsync({
@@ -52,6 +53,10 @@ npm install
       }),
     ]
   })
+  // auth.controller.ts
+  import { LocalAuthController } from 'nestjs-session-auth-package';
+  export class AuthController extends LocalAuthController { }
+
   ```
 
 ## Change Log
