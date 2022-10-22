@@ -53,10 +53,11 @@ npm install
       }),
     ]
   })
+  ```
+  ```ts
   // auth.controller.ts
   import { LocalAuthController } from 'nestjs-session-auth-package';
   export class AuthController extends LocalAuthController { }
-
   ```
 
 ## Change Log
