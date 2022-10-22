@@ -44,7 +44,6 @@ export class ExpressSessionAuthModule implements NestModule {
           return sessionOptions;
         },
         inject: [AUTH_OPTIONS],
-        isGlobal: true,
       },
     ];
     return {
