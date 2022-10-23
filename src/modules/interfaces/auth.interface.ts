@@ -21,5 +21,5 @@ export interface IAuthLoginBaseOptions {
 }
 export interface IAuthService {
   validateUser(username: string, password: string): Promise<unknown>;
-  getUserByUserNameField(key: string, value: string): Promise<unknown>;
+  getUserByUserNameField(value: string): Promise<unknown>;
 }
