@@ -9,13 +9,14 @@ import {
   Logger,
 } from '@nestjs/common';
 import { ApiTags, ApiBody } from '@nestjs/swagger';
+import { IAuthLoginBaseOptions } from '../../interfaces/auth.interface';
 import { AUTH_OPTIONS } from '../../../common/constants';
 import { LocalGuard } from '../guards/local.guard';
 @ApiTags('Authorization')
 @Controller('auth')
 export class LocalAuthController {
   private readonly logger = new Logger('AuthController');
-  constructor(@Inject(AUTH_OPTIONS) private readonly options) {}
+  constructor(@Inject(AUTH_OPTIONS) private readonly options: IAuthLoginBaseOptions) { }
   @Post('login')
   @ApiBody({
     schema: {
@@ -49,7 +50,7 @@ export class LocalAuthController {
     if (this.options?.logoutRedirect?.length > 0) {
       return res.redirect(this.options.logoutRedirect);
     }
-    res.clearCookie(this.options?.sessionOptions?.cookieName ?? 'connect.sid');
+    res.clearCookie(this.options?.session?.name ?? 'connect.sid');
     return res.send({
       message: this.options?.loggedOutMessage ?? 'Logged out',
     });

@@ -15,6 +15,9 @@ export interface IAuthLoginBaseOptions {
   usernameField?: string;
   passwordField?: string;
   successRedirect?: string;
+  successMessage?: string;
+  logoutRedirect?: string;
+  loggedOutMessage?: string;
 }
 export interface IAuthService {
   validateUser(username: string, password: string): Promise<unknown>;
