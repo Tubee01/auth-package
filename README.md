@@ -16,11 +16,8 @@
 
 ### Installation
 
-1. Clone the repo
-2. Run npm/yarn install
-
 ```bash
-npm install
+npm i nestjs-package-express-session-auth
 ```
 ### Usage
   
